@@ -1,0 +1,32 @@
+@mixin transition($property){
+    -webkit-transition: $property;
+    transition: $property;
+}
+
+@mixin background-image($property){
+    background-image: $property;
+}
+
+@mixin transform($property){
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    -moz-transform: $property;
+    -o-transform: $property;
+    transform: $property;
+}
+
+@mixin user-select(){
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+@mixin animation($property){
+    -webkit-animation: $property;
+    -moz-animation: $property;
+    -ms-animation: $property;
+    -o-animation: $property;
+    animation: $property;
+}
