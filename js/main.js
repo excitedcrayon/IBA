@@ -8,7 +8,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('scroll', () => {
     updateNavigationBackgroundOpacity();
-    new ParallaxEffect('.page-header-bar');
+    try{
+        new ParallaxEffect('.page-header-bar');
+    }catch(e){}
 });
 
 ['DOMContentLoaded','resize'].forEach((event) => {
