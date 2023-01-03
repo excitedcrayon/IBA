@@ -305,6 +305,11 @@ p {
     background: #000000;
     position: relative; }
   .page-wrapper .page-hero-container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -326,13 +331,6 @@ p {
         line-height: 3rem;
         font-weight: 300;
         text-transform: uppercase; }
-      .page-wrapper .page-hero-container .page-header .page-header-bar {
-        position: absolute;
-        width: 300px;
-        height: 5px;
-        bottom: -1.35rem;
-        right: 0;
-        background-image: linear-gradient(45deg, #000000, #002240); }
     .page-wrapper .page-hero-container p {
       width: 100%;
       font-size: 1.25rem;
@@ -396,6 +394,13 @@ p {
   100% {
     opacity: 1;
     top: 1rem; } }
+  .page-wrapper .page-header-bar {
+    position: absolute;
+    width: 300px;
+    height: 5px;
+    bottom: -1.35rem;
+    right: 0;
+    background-image: linear-gradient(45deg, #000000, #002240); }
   .page-wrapper .page-section {
     position: relative; }
     .page-wrapper .page-section [class*="sub-header"] span {
@@ -521,12 +526,39 @@ p {
     .page-wrapper .electrical-content-container {
       max-width: 50%; } }
   .page-wrapper .our-services {
-    background: #000000;
-    padding: 1.5rem; }
+    background-color: #000000;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1; }
+    .page-wrapper .our-services::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; }
     .page-wrapper .our-services > div {
       margin: 0 auto;
       width: 100%;
       max-width: 1300px; }
+    .page-wrapper .our-services .section-header {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      margin: 1.25rem auto;
+      position: relative; }
+      .page-wrapper .our-services .section-header span {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        font-size: 2.8rem;
+        line-height: 3rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5); }
     .page-wrapper .our-services .our-services-content {
       display: -ms-flex;
       display: flex;
@@ -551,8 +583,8 @@ p {
         -moz-transform: rotateX(0deg);
         -o-transform: rotateX(0deg);
         transform: rotateX(0deg);
-        -webkit-transition: 0.55s ease-in-out;
-        transition: 0.55s ease-in-out; }
+        -webkit-transition: 0.75s ease-in-out;
+        transition: 0.75s ease-in-out; }
         .page-wrapper .our-services .our-services-content article:hover {
           -webkit-transform: rotateX(0);
           -ms-transform: rotateX(0);
@@ -561,6 +593,8 @@ p {
           transform: rotateX(0); }
           .page-wrapper .our-services .our-services-content article:hover::after {
             opacity: 0.6; }
+          .page-wrapper .our-services .our-services-content article:hover .section-sub-header span {
+            color: #002240; }
         .page-wrapper .our-services .our-services-content article::before {
           content: '';
           position: absolute;
@@ -609,21 +643,29 @@ p {
           -o-transform: rotateX(25deg);
           transform: rotateX(25deg); } }
       .page-wrapper .our-services .our-services-content .service-development::before {
-        background-image: linear-gradient(to right, #000000, #047AED, #002240); }
+        background-image: linear-gradient(to right, #000000, #002240); }
       .page-wrapper .our-services .our-services-content .service-development::after {
         background: url("../img/services/icon-development.svg"); }
       .page-wrapper .our-services .our-services-content .service-financing::before {
-        background-image: linear-gradient(to right, #000000, #047AED, #FC8B06); }
+        background-image: linear-gradient(to right, #000000, #FC8B06); }
       .page-wrapper .our-services .our-services-content .service-financing::after {
         background: url("../img/services/icon-tailored-finance.svg"); }
       .page-wrapper .our-services .our-services-content .service-engineering::before {
-        background-image: linear-gradient(to right, #000000, #047AED, #FFFFFF); }
+        background-image: linear-gradient(to right, #000000, #FFFFFF); }
       .page-wrapper .our-services .our-services-content .service-engineering::after {
         background: url("../img/services/icon-engineering-procurement-construction.svg"); }
       .page-wrapper .our-services .our-services-content .service-operation::before {
-        background-image: linear-gradient(to right, #000000, #047AED, #6BAD35); }
+        background-image: linear-gradient(to right, #000000, #6BAD35); }
       .page-wrapper .our-services .our-services-content .service-operation::after {
         background: url("../img/services/icon-operation-and-maintenance.svg"); }
+  .page-wrapper .our-services.service-development::before {
+    background-image: linear-gradient(to bottom, #000000, rgba(0, 34, 64, 0.35), #000000); }
+  .page-wrapper .our-services.service-financing::before {
+    background-image: linear-gradient(to bottom, #000000, rgba(252, 139, 6, 0.35), #000000); }
+  .page-wrapper .our-services.service-engineering::before {
+    background-image: linear-gradient(to bottom, #000000, rgba(4, 122, 237, 0.35), #000000); }
+  .page-wrapper .our-services.service-operation::before {
+    background-image: linear-gradient(to bottom, #000000, rgba(107, 173, 53, 0.35), #000000); }
   .page-wrapper .about-us {
     background-image: linear-gradient(to bottom, #000000, #002240); }
 
