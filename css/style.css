@@ -527,7 +527,8 @@ p {
       max-width: 50%; } }
   .page-wrapper .our-services {
     background-color: #000000;
-    padding: 1.5rem;
+    padding: 3.5rem 1.5rem;
+    padding-bottom: 6rem;
     position: relative;
     z-index: 1; }
     .page-wrapper .our-services::before {
@@ -578,6 +579,7 @@ p {
         position: relative;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+        border: 1px solid rgba(238, 238, 238, 0.02);
         -webkit-transform: rotateX(0deg);
         -ms-transform: rotateX(0deg);
         -moz-transform: rotateX(0deg);

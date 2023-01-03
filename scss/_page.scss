@@ -241,7 +241,8 @@
     // our service section
     .our-services{
         background-color: $black;
-        padding: 1.5rem;
+        padding: 3.5rem 1.5rem;
+        padding-bottom: 6rem;
         position: relative;
         z-index: 1;
         &::before{
@@ -290,9 +291,10 @@
                 position: relative;
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
+                border: 1px solid rgba($grey, 0.02);
                 @include transform(rotateX(0deg));
                 @include transition(0.75s ease-in-out);
-                &:hover{
+                &:hover{ 
                     @include transform(rotateX(0));
                     &::after{
                         opacity: 0.6;
