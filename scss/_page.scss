@@ -266,6 +266,22 @@
             max-width: 50%;
         }
     }
+
+    .section-header{
+        @include user-select;
+        padding: 1.25rem 0;
+        position: relative;
+        span{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-size: 2.8rem;
+            line-height: 3rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: rgba($white, 0.5);
+        }
+    } 
     
     // our service section
     .our-services{
@@ -288,21 +304,6 @@
             width: 100%;
             max-width: 1300px;
         } 
-        .section-header{
-            @include user-select;
-            margin: 1.25rem auto;
-            position: relative;
-            span{
-                display: inline-block;
-                width: 100%;
-                text-align: center;
-                font-size: 2.8rem;
-                line-height: 3rem;
-                font-weight: 300;
-                text-transform: uppercase;
-                color: rgba($white, 0.5);
-            }
-        }
         .our-services-content{
             display: -ms-flex;
             display: flex;
@@ -338,7 +339,7 @@
                     top: 0;
                     left: 0;
                     width: 100%;
-                    height: 10px;
+                    height: 30px;
                     border-top-left-radius: 10px;
                     border-top-right-radius: 10px;
                 }
@@ -364,6 +365,7 @@
                         font-size: 1.5rem;
                         line-height: 1.5rem;
                         padding: 0.5rem;
+                        padding-top: 3rem;
                         font-weight: 400;
                         display: table-cell;
                         vertical-align: middle;
@@ -440,6 +442,7 @@
 
     // about us section
     .about-us{
+        padding-bottom: 2rem;
         background-image: linear-gradient(to bottom, $black, $dark-color);
     }
 } 

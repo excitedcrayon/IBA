@@ -52,7 +52,9 @@ img {
   border-radius: 0.5rem; }
 
 p {
-  margin: 0; }
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5rem; }
 
 .page-wrapper .nav-container {
   position: fixed;
@@ -552,6 +554,23 @@ p {
     .page-wrapper .solar-content-container,
     .page-wrapper .electrical-content-container {
       max-width: 50%; } }
+  .page-wrapper .section-header {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    padding: 1.25rem 0;
+    position: relative; }
+    .page-wrapper .section-header span {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      font-size: 2.8rem;
+      line-height: 3rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5); }
   .page-wrapper .our-services {
     background-color: #000000;
     padding: 3.5rem 1.5rem;
@@ -570,23 +589,6 @@ p {
       margin: 0 auto;
       width: 100%;
       max-width: 1300px; }
-    .page-wrapper .our-services .section-header {
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -o-user-select: none;
-      user-select: none;
-      margin: 1.25rem auto;
-      position: relative; }
-      .page-wrapper .our-services .section-header span {
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-        font-size: 2.8rem;
-        line-height: 3rem;
-        font-weight: 300;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.5); }
     .page-wrapper .our-services .our-services-content {
       display: -ms-flex;
       display: flex;
@@ -630,7 +632,7 @@ p {
           top: 0;
           left: 0;
           width: 100%;
-          height: 10px;
+          height: 30px;
           border-top-left-radius: 10px;
           border-top-right-radius: 10px; }
         .page-wrapper .our-services .our-services-content article::after {
@@ -655,6 +657,7 @@ p {
             font-size: 1.5rem;
             line-height: 1.5rem;
             padding: 0.5rem;
+            padding-top: 3rem;
             font-weight: 400;
             display: table-cell;
             vertical-align: middle;
@@ -696,6 +699,7 @@ p {
   .page-wrapper .our-services.service-operation::before {
     background-image: linear-gradient(to bottom, #000000, rgba(107, 173, 53, 0.35), #000000); }
   .page-wrapper .about-us {
+    padding-bottom: 2rem;
     background-image: linear-gradient(to bottom, #000000, #002240); }
 
 .page-wrapper .footer-container {
