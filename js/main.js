@@ -3,6 +3,8 @@
 window.addEventListener('DOMContentLoaded', () => {
     footerYear();
     animateBurgerMenu();
+    scrollToFirstSection();
+    animateSolarImages();
     animateOurServicesBgColor();
 });
 
@@ -59,6 +61,43 @@ function resizePageHero(){
     if(pageHero != undefined && navContainer != undefined){
         let navContainerBounds = navContainer.getBoundingClientRect();
         pageHero.style.paddingTop = `${Math.floor(navContainerBounds.height)}px`;
+    }
+}
+
+function scrollToFirstSection(){
+    let pageHeroButton = document.querySelector('.page-hero-button button');
+    if(pageHeroButton != undefined){
+        let sectionWrapper = document.querySelector('.solar-electrical-wrapper');
+        pageHeroButton.addEventListener('click', () => {
+            let sectionWrapperBounds = sectionWrapper.getBoundingClientRect();
+            window.scrollTo({
+                top: Math.floor(sectionWrapperBounds.top) - 80,
+                left: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+let solarImageIndex = 0;
+function animateSolarImages(){
+    let solarImages = document.querySelectorAll('.solar-images > div');
+    let currentImage = 'current-image';
+    if(solarImages != undefined){
+
+        setInterval(() => {
+
+            if(solarImageIndex > solarImages.length - 1){
+                solarImageIndex = 0;
+            }
+
+            for(let i = 0; i < solarImages.length; i++){
+                solarImages[i].classList.remove(currentImage);
+                solarImages[solarImageIndex].classList.add(currentImage);
+            }
+
+            solarImageIndex = solarImageIndex + 1;
+        }, 3000);
     }
 }
 

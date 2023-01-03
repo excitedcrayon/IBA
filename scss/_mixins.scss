@@ -41,3 +41,8 @@
     -moz-perspective: $property;
     perspective: $property;
 }
+
+@mixin filter($property){
+    -webkit-filter: $property;
+    filter: $property;
+}

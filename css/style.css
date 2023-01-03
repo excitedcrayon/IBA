@@ -372,6 +372,9 @@ p {
           border: 1px solid rgba(4, 122, 237, 0.5); }
           .page-wrapper .page-hero-container .page-hero-button button:hover::before {
             color: rgba(4, 122, 237, 0.5); }
+          .page-wrapper .page-hero-container .page-hero-button button:hover::after {
+            bottom: -3rem;
+            opacity: 1; }
         .page-wrapper .page-hero-container .page-hero-button button::before {
           content: '\02193';
           color: rgba(255, 255, 255, 0.5);
@@ -394,6 +397,18 @@ p {
   100% {
     opacity: 1;
     top: 1rem; } }
+        .page-wrapper .page-hero-container .page-hero-button button::after {
+          content: attr(data-button-title);
+          position: absolute;
+          bottom: -2rem;
+          left: 0;
+          width: 100%;
+          color: rgba(255, 255, 255, 0.5);
+          text-transform: uppercase;
+          font-size: 0.7rem;
+          opacity: 0;
+          -webkit-transition: 0.6s ease;
+          transition: 0.6s ease; }
   .page-wrapper .page-header-bar {
     position: absolute;
     width: 300px;
@@ -471,6 +486,18 @@ p {
       width: 100%;
       height: 100%;
       background-size: cover !important; }
+      .page-wrapper .solar-images > div:first-child,
+      .page-wrapper .electrical-images > div:first-child {
+        z-index: 1; }
+  .page-wrapper .solar-images > div {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    -webkit-transition: 1s ease-in;
+    transition: 1s ease-in; }
+  .page-wrapper .solar-images > div.current-image {
+    z-index: 1;
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0); }
   .page-wrapper .solar-images .img-one {
     background: url("../img/solar/solar-one.jpg") no-repeat center; }
   .page-wrapper .solar-images .img-two {
@@ -645,7 +672,7 @@ p {
           -o-transform: rotateX(25deg);
           transform: rotateX(25deg); } }
       .page-wrapper .our-services .our-services-content .service-development::before {
-        background-image: linear-gradient(to right, #000000, #002240); }
+        background-image: linear-gradient(to right, #000000, #047AED); }
       .page-wrapper .our-services .our-services-content .service-development::after {
         background: url("../img/services/icon-development.svg"); }
       .page-wrapper .our-services .our-services-content .service-financing::before {
@@ -661,11 +688,11 @@ p {
       .page-wrapper .our-services .our-services-content .service-operation::after {
         background: url("../img/services/icon-operation-and-maintenance.svg"); }
   .page-wrapper .our-services.service-development::before {
-    background-image: linear-gradient(to bottom, #000000, rgba(0, 34, 64, 0.35), #000000); }
+    background-image: linear-gradient(to bottom, #000000, rgba(4, 122, 237, 0.35), #000000); }
   .page-wrapper .our-services.service-financing::before {
     background-image: linear-gradient(to bottom, #000000, rgba(252, 139, 6, 0.35), #000000); }
   .page-wrapper .our-services.service-engineering::before {
-    background-image: linear-gradient(to bottom, #000000, rgba(4, 122, 237, 0.35), #000000); }
+    background-image: linear-gradient(to bottom, #000000, rgba(255, 255, 255, 0.35), #000000); }
   .page-wrapper .our-services.service-operation::before {
     background-image: linear-gradient(to bottom, #000000, rgba(107, 173, 53, 0.35), #000000); }
   .page-wrapper .about-us {
