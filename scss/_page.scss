@@ -105,6 +105,8 @@
         }
     }
     // home page styles
+
+    // solar and engineering section
     .page-section{
         position: relative;
         [class*="sub-header"]{
@@ -140,6 +142,12 @@
             flex: 1 0 auto;
             width: 100%;
             min-height: 500px;
+            overflow: hidden;
+            &:hover{
+                > div {
+                    &::before{ opacity: 0.6; }
+                }
+            }
          }
          @media (min-width: 768px){
             > section { max-width: 50%; }
@@ -165,8 +173,10 @@
             left: 0;
             width: 100%;
             height: 100%;
+            opacity: 0.8;
             background-image: linear-gradient(to top, rgba($black,0.95), rgba($orange, 0.25));
             z-index: 2;
+            @include transition(0.25s ease-in-out);
         }
         > div {
             position: absolute;
@@ -199,8 +209,11 @@
         margin-right: auto;
         padding: 0.85rem;
         border: 1px solid rgba($grey, 0.25);
+        border-radius: 0.5rem;
         background: rgba($black, 0.35);
         @include transform(translate(-50%, -50%));
+        @include transition(0.45s ease-in-out);
+        &:hover{ background: rgba($black, 0.5);}
         > div {
             color: $white;
             font-weight: 300;
@@ -222,5 +235,131 @@
         .electrical-content-container{
             max-width: 50%;
         }
+    }
+    
+    // our service section
+    .our-services{
+        //background-image: linear-gradient(to bottom, $black, $dark-color, $black), linear-gradient(to left, $black 50%, transparent);
+        background: $black;
+        padding: 1.5rem;
+        > div {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1300px;
+        }
+        .our-services-content{
+            display: -ms-flex;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            @include perspective(1000px);
+            article{
+                outline: none;
+                -ms-flex: 1 0 auto;
+                flex: 1 0 auto;
+                margin-bottom: 1rem;
+                width: 100%;
+                min-height: 350px;
+                background: $white;
+                position: relative;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                @include transform(rotateX(0deg));
+                @include transition(0.55s ease-in-out);
+                &:hover{
+                    @include transform(rotateX(0));
+                    &::after{
+                        opacity: 0.6;
+                    }
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 10px;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 50px;
+                    opacity: 0.25;
+                    background-size: contain !important;
+                    @include transition(0.35s linear);
+                }
+                .section-sub-header{
+                    display: table;
+                    table-layout: fixed;
+                    width: 100%;
+                    min-height: 100px;
+                    position: relative;
+                    z-index: 1;
+                    span{
+                        font-size: 1.5rem;
+                        line-height: 1.5rem;
+                        padding: 0.5rem;
+                        font-weight: 400;
+                        display: table-cell;
+                        vertical-align: middle;
+                        text-align: center;
+                    }
+                }
+                p { 
+                    font-size: 1.25rem;
+                    font-weight: 300;
+                    padding: 1.5rem; 
+                }
+            }
+            @media (min-width: 767px){
+                article{
+                    max-width: 300px;
+                    @include transform(rotateX(25deg));
+                }
+            }
+            
+            .service-development{
+                &::before{
+                    background-image: linear-gradient(to right, $black, $primary-color, $dark-color);
+                }
+                &::after{
+                    background: url('../img/services/icon-development.svg');
+                }
+            }
+            .service-financing{
+                &::before{
+                    background-image: linear-gradient(to right, $black, $primary-color, $orange);
+                }
+                &::after{
+                    background: url('../img/services/icon-tailored-finance.svg');
+                }
+            }
+            .service-engineering{
+                &::before{
+                    background-image: linear-gradient(to right, $black, $primary-color, $white);
+                }
+                &::after{
+                    background: url('../img/services/icon-engineering-procurement-construction.svg');
+                }
+            }
+            .service-operation{
+                &::before{
+                    background-image: linear-gradient(to right, $black, $primary-color, $solar-dark-green);
+                }
+                &::after{
+                    background: url('../img/services/icon-operation-and-maintenance.svg');
+                }
+            }
+        }
+    }
+
+    // about us section
+    .about-us{
+        background-image: linear-gradient(to bottom, $black, $dark-color);
     }
 } 

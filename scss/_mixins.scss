@@ -35,3 +35,9 @@
     -webkit-clip-path: $property;
     clip-path: $property;
 }
+
+@mixin perspective($property){
+    -webkit-perspective: $property;
+    -moz-perspective: $property;
+    perspective: $property;
+}
