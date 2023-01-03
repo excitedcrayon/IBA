@@ -30,3 +30,8 @@
     -o-animation: $property;
     animation: $property;
 }
+
+@mixin clip-path($property){
+    -webkit-clip-path: $property;
+    clip-path: $property;
+}

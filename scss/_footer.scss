@@ -1,7 +1,9 @@
 .page-wrapper{
     .footer-container{
+        position: relative;
         background: $dark-color;
         @include background-image(linear-gradient(to bottom, $dark-color, $black));
+        z-index: 1000;
         footer{
             color: $white;
             font-weight: 300;

@@ -104,23 +104,123 @@
            }
         }
     }
-
     // home page styles
-    .solar-row{
+    .page-section{
+        position: relative;
+        [class*="sub-header"]{
+            span{
+                display: inline-block;
+                font-size: 1.7rem;
+                font-weight: 300;
+                line-height: 3rem;
+                text-transform: uppercase;
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 40%;
+                    border-bottom: 2px solid rgba($white, 0.5);
+                }
+            }
+            @media (max-width: 1500px){
+                span{ font-size: 1.5rem; }
+            }
+        }
+    }
+    .section-wrapper{
         display: -ms-flex;
         display: flex;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        align-items: center;
-        > div {
+        justify-content: center;
+         > section {
             -ms-flex: 1 0 auto;
             flex: 1 0 auto;
             width: 100%;
-        }
-        @media (min-width: 768px){
-            > div {
-                max-width: 50%;
+            min-height: 500px;
+         }
+         @media (min-width: 768px){
+            > section { max-width: 50%; }
+            .solar-images{
+                border-right: 1px solid rgba($grey, 0.05);
             }
+         }
+    }
+    .solar-images,
+    .electrical-images{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        z-index: -1;
+        @include transition(0.45s ease);
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to top, rgba($black,0.95), rgba($orange, 0.25));
+            z-index: 2;
+        }
+        > div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover !important;
+        }
+    }
+    .solar-images{
+        .img-one{background: url('../img/solar/solar-one.jpg') no-repeat center;}
+        .img-two{background: url('../img/solar/solar-two.jpg') no-repeat center;}
+        .img-three{background: url('../img/solar/solar-three.jpg') no-repeat center;}
+        .img-four{background: url('../img/solar/solar-four.jpg') no-repeat center;}
+        .img-five{background: url('../img/solar/solar-five.jpg') no-repeat center;}
+        .img-six{background: url('../img/solar/solar-six.jpg') no-repeat center;}
+     }
+     .electrical-images{
+        .img-one{background: url('../img/electrical/electrical.jpg') no-repeat center;}
+    }
+    .solar-content-container,
+    .electrical-content-container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.85rem;
+        border: 1px solid rgba($grey, 0.25);
+        background: rgba($black, 0.35);
+        @include transform(translate(-50%, -50%));
+        > div {
+            color: $white;
+            font-weight: 300;
+        }
+        article{
+            > p {
+                position: relative;
+                padding-left: 1rem;
+                &::before{
+                    content: '\2013';
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+    }
+    @media (min-width: 1400px){
+        .solar-content-container,
+        .electrical-content-container{
+            max-width: 50%;
         }
     }
 } 

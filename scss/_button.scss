@@ -1,0 +1,84 @@
+// _button.scss file controls the styles for 
+// button elements
+
+.page-button {
+    margin: 0.45rem 0;
+    a{
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 0.25rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        border: 1px solid $white;
+        color: $white;
+        outline: none;
+        position: relative;
+        z-index: 1;
+        @include transition(0.45s ease);
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            border-radius: inherit;
+            border: 2px solid rgba($white, 0.5);
+            @include transform(scale(1.35));
+            @include transition(0.45s ease-in-out);
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            @include clip-path(circle(0));
+            background: $white;
+            z-index: -1;
+            @include transition(0.65s ease-in-out);
+        }
+        &:hover{
+            color: $black;
+            &::before{
+                opacity: 1;
+                @include transform(scale(1));
+            }
+            &::after{
+                opacity: 1;
+                @include clip-path(circle(100%));
+            }
+        }
+    }
+}
+.btn-secondary{
+    a{
+        color: $black;
+    }
+}
+.btn-blue{
+    a{
+        color: $dark-color;
+        border: 1px solid $dark-color;
+        &:hover{ color: $white; }
+        &::before{ border: 1px solid $dark-color; }
+        &::after{
+            background-image: linear-gradient(45deg, $dark-color, $black);
+        }
+    }
+}
+.btn-light-blue{
+    a{
+        color: $primary-color;
+        border: 1px solid $primary-color;
+        &:hover{ color: $white; }
+        &::before{ border: 1px solid $primary-color; }
+        &::after{
+            background-image: linear-gradient(45deg, $primary-color, $dark-color);
+        }
+    }
+}
