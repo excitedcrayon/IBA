@@ -439,10 +439,179 @@
             background-image: linear-gradient(to bottom, $black, rgba($solar-dark-green,0.35), $black);
         }
     }
-
-    // about us section
     .about-us{
         padding-bottom: 2rem;
         background-image: linear-gradient(to bottom, $black, $dark-color);
+    }
+    .content-container{
+        padding-bottom: 5rem;
+        overflow-x: hidden;
+        .content-hero{
+            width: 100%;
+            height: 350px;
+            display: table;
+            table-layout: fixed;
+            overflow: hidden;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: -1;
+            &::before,
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
+                z-index: -1;
+            }
+            &::before{
+                background: rgba($black, 0.3);
+            }
+            &::after{
+                background-image: linear-gradient(to top, rgba($black, 0.85), rgba($dark-color, 0.45)),url('../img/electrical/electrical.jpg');
+                //filter: url(#noiseGrain);
+            }
+            .filters{
+                width: 0;
+                height: 0;
+                visibility: hidden;
+            }
+            h1{
+                width: 100%;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                text-transform: uppercase;
+                color: $white;
+                font-weight: 100;
+                font-size: 4rem;
+            }
+        }
+        .content-section{
+            margin: 2.35rem auto;
+            max-width: 1300px;
+            position: relative;
+            z-index: 1;
+            > h2 {
+                color: $dark-color;
+                font-weight: 100;
+                font-size: 2.5rem;
+                line-height: 3rem;
+                padding-bottom: 0.65rem;
+                margin-bottom: 1.25rem;
+                text-transform: uppercase;
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+            }
+            > h2.primary-header{
+                padding-left: unset;
+                display: block;
+                &::after{
+                    content: unset;
+                }
+            }
+            > article {
+                padding: 1rem;
+                > p {
+                    font-weight: 100;
+                    margin-bottom: 25px;
+                    line-height: 1.75rem;
+                }
+                li{
+                    font-weight: 100;
+                    font-size: 1rem;
+                    line-height: 1.75rem;
+                    list-style-type: disc;
+                    margin-left: 1.25rem;
+                    margin-bottom: 0.35rem;
+                }
+            }
+            .text-left{ text-align: left; }
+            .text-center { text-align: center; }
+            .text-right { text-align: right; }
+        }
+        /* === ELECTRICAL PAGE === */
+        .content-flex{
+            @include displayFlex;
+            > article,
+            .content-img{
+                @include flex(1 0 auto);
+            }
+            @media (min-width: 768px){
+                > article,
+                .content-img{
+                    max-width: 50%;
+                }
+            }
+            .content-img{
+                img {
+                    width: 400px;
+                    height: 400px;
+                    margin: 0 auto;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+        }
+    }
+    .accordion{
+        border: 1px solid $grey;
+        border-radius: 10px;
+        @include user-select;
+        margin: 1.25rem;
+        max-width: 500px;
+        article{
+            h2{
+                outline: none;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-size: 1rem;
+                font-weight: 100;
+                padding: 0.35rem 0.75rem;
+                padding-left: 50px;
+                border-bottom: 1px solid $grey;
+                background: transparent;
+                position: relative;
+                @include transition(0.3s linear);
+                &:hover{
+                    font-weight: 500;
+                    background: $grey;
+                }
+                &::before{
+                    content: '\002B';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 50px;
+                    height: 100%;
+                    text-align: center;
+                    font-size: 1.3rem;
+                }
+            }
+            h2.active-accordion-heading{
+                background: $grey;
+                font-weight: 500;
+                &::before{
+                    content: '\2212';
+                }
+            }
+            ul{
+                max-height: 0;
+                overflow: hidden;
+                @include transition(0.35s linear);
+            }
+            li{
+                list-style-type: disc;
+                margin-left: 1.5rem;
+            }
+        }
+    }
+    .accordion-centered{
+        margin: 1.25rem auto;
     }
 } 

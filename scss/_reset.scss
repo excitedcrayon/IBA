@@ -17,6 +17,7 @@ body{
     padding: 0;
     width: 100%;
     line-height: 1.6;
+    overscroll-behavior: none;
 }
 
 body{
@@ -53,10 +54,18 @@ button{
 img{
     display: block; 
     width: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 ::-webkit-scrollbar{
     width: 5px;
+}
+::-webkit-scrollbar-track{
+    background: #002240;
 }
 ::-webkit-scrollbar-thumb{
     background: #047AED;
@@ -66,4 +75,9 @@ p{
     margin: 0; 
     font-size: 1.25rem;
     line-height: 1.5rem;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
 }

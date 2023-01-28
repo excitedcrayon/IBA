@@ -19,7 +19,7 @@ class SiteHeader extends HTMLElement{
                                 <li><a href="index.html" title="Home">Home</a></li>
                                 <li><a href="solar.html" title="Solar">Solar</a></li>
                                 <li><a href="electrical.html" title="Electrical">Electrical</a></li>
-                                <li><a href="about-us.html" title="About Us">About Us</a></li>
+                                <li><a href="about.html" title="About Us">About</a></li>
                             </ul>
                         </nav>
                     </div>

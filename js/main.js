@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     scrollToFirstSection();
     animateSolarImages();
     animateOurServicesBgColor();
+    accordion();
 });
 
 window.addEventListener('scroll', () => {
@@ -17,7 +18,7 @@ window.addEventListener('scroll', () => {
 
 ['DOMContentLoaded','resize'].forEach((event) => {
     window.addEventListener(event, () => {
-        resizePageHero();
+        resizeContentHero();
     });
 });
 
@@ -55,12 +56,12 @@ function updateNavigationBackgroundOpacity(){
     }
 }
 
-function resizePageHero(){
-    let pageHero = document.querySelector('.page-hero');
+function resizeContentHero(){
+    let contentHero = document.querySelector('.content-hero');
     let navContainer = document.querySelector('.nav-container');
-    if(pageHero != undefined && navContainer != undefined){
+    if(contentHero != undefined && navContainer != undefined){
         let navContainerBounds = navContainer.getBoundingClientRect();
-        pageHero.style.paddingTop = `${Math.floor(navContainerBounds.height)}px`;
+        contentHero.style.paddingTop = `${Math.floor(navContainerBounds.height)}px`;
     }
 }
 
@@ -124,5 +125,22 @@ function clearOurServicesSelector(selector){
     let ourServices = 'our-services';
     if(selector != undefined){
         selector.className = `${pageSection} ${ourServices}`;
+    }
+}
+
+function accordion(){
+    let accordionHeading = document.querySelectorAll('.accordion article h2');
+    if(accordionHeading != undefined){
+        accordionHeading.forEach((element) => {
+            element.addEventListener('click', () => {
+                element.classList.toggle('active-accordion-heading');
+                let sibling = element.nextElementSibling;
+                if(sibling.style.maxHeight){
+                    sibling.style.maxHeight = null;
+                }else{
+                    sibling.style.maxHeight = `${sibling.scrollHeight}px`;
+                }
+            });
+        });
     }
 }

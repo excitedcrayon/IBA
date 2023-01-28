@@ -46,3 +46,17 @@
     -webkit-filter: $property;
     filter: $property;
 }
+
+@mixin displayFlex(){
+    display: -ms-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex($property){ 
+    -ms-flex: $property;
+    flex: $property;
+    width: 100%;
+}
