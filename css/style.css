@@ -69,6 +69,38 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0; }
 
+.fade-in {
+  opacity: 0;
+  -webkit-animation: fade-in 0.1s linear forwards;
+  -moz-animation: fade-in 0.1s linear forwards;
+  -ms-animation: fade-in 0.1s linear forwards;
+  -o-animation: fade-in 0.1s linear forwards;
+  animation: fade-in 0.1s linear forwards;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease; }
+
+.animate-section {
+  opacity: 1;
+  -webkit-animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s;
+  -moz-animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s;
+  -ms-animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s;
+  -o-animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s;
+  animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s; }
+
+@keyframes motion-blur {
+  0% {
+    -webkit-filter: url(#motionBlur);
+    filter: url(#motionBlur); }
+  25% {
+    -webkit-filter: url(#motionBlur2);
+    filter: url(#motionBlur2); }
+  50% {
+    -webkit-filter: url(#motionBlur3);
+    filter: url(#motionBlur3); }
+  100% {
+    -webkit-filter: url(#motionBlur4);
+    filter: url(#motionBlur4); } }
+
 .page-wrapper .nav-container {
   position: fixed;
   width: 100%;
@@ -726,7 +758,9 @@ h1, h2, h3, h4, h5, h6 {
       overflow: hidden;
       margin-bottom: 5rem;
       position: relative;
-      z-index: -1; }
+      z-index: -1;
+      background-size: cover !important;
+      background-repeat: no-repeat !important; }
       .page-wrapper .content-container .content-hero::before, .page-wrapper .content-container .content-hero::after {
         content: '';
         position: absolute;
@@ -737,10 +771,8 @@ h1, h2, h3, h4, h5, h6 {
         background-size: cover !important;
         background-repeat: no-repeat !important;
         z-index: -1; }
-      .page-wrapper .content-container .content-hero::before {
-        background: rgba(0, 0, 0, 0.3); }
       .page-wrapper .content-container .content-hero::after {
-        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 34, 64, 0.45)), url("../img/electrical/electrical.jpg"); }
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 34, 64, 0.45)); }
       .page-wrapper .content-container .content-hero .filters {
         width: 0;
         height: 0;
@@ -753,7 +785,12 @@ h1, h2, h3, h4, h5, h6 {
         text-transform: uppercase;
         color: #FFFFFF;
         font-weight: 100;
-        font-size: 4rem; }
+        font-size: 3rem; }
+      @media (min-width: 767px) {
+        .page-wrapper .content-container .content-hero h1 {
+          font-size: 4rem; } }
+    .page-wrapper .content-container .electrical-hero {
+      background: url("/img/electrical/electrical.jpg"); }
     .page-wrapper .content-container .content-section {
       margin: 2.35rem auto;
       max-width: 1300px;
@@ -762,8 +799,9 @@ h1, h2, h3, h4, h5, h6 {
       .page-wrapper .content-container .content-section > h2 {
         color: #002240;
         font-weight: 100;
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 3rem;
+        padding: 0 1.25rem;
         padding-bottom: 0.65rem;
         margin-bottom: 1.25rem;
         text-transform: uppercase;
@@ -771,6 +809,9 @@ h1, h2, h3, h4, h5, h6 {
         display: inline-block;
         width: 100%;
         text-align: center; }
+      @media (min-width: 1024px) {
+        .page-wrapper .content-container .content-section > h2 {
+          font-size: 2.5rem; } }
       .page-wrapper .content-container .content-section > h2.primary-header {
         padding-left: unset;
         display: block; }
@@ -807,16 +848,25 @@ h1, h2, h3, h4, h5, h6 {
         -ms-flex: 1 0 auto;
         flex: 1 0 auto;
         width: 100%; }
+      @media (max-width: 767px) {
+        .page-wrapper .content-container .content-flex > article {
+          order: 2; }
+        .page-wrapper .content-container .content-flex .content-img {
+          order: 1; } }
       @media (min-width: 768px) {
         .page-wrapper .content-container .content-flex > article,
         .page-wrapper .content-container .content-flex .content-img {
           max-width: 50%; } }
       .page-wrapper .content-container .content-flex .content-img img {
-        width: 400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
         margin: 0 auto;
         object-fit: contain;
         object-position: center; }
+      @media (min-width: 1024px) {
+        .page-wrapper .content-container .content-flex .content-img img {
+          width: 400px;
+          height: 400px; } }
   .page-wrapper .accordion {
     border: 1px solid #EEEEEE;
     border-radius: 10px;

@@ -13,15 +13,19 @@
     <div class="page-wrapper">
         <site-header></site-header>
         <div class="content-container">
-            <div class="content-hero">
+            <div class="content-hero electrical-hero">
                 <svg class="filters">
                     <filter id="motionBlur">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="0,20" />
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0 0" />
                     </filter>
-                    <filter id="noiseGrain">
-                        <feTurbulence type="fractalNoise" baseFrequency="30" result="noisy"/>
-                        <feColorMatrix type="saturate" value="0" />
-                        <feBlend in="SourceGraphic" in2="noisy" mode="multiply" />
+                    <filter id="motionBlur2">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="5 0" />
+                    </filter>
+                    <filter id="motionBlur3">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="20 0" />
+                    </filter>
+                    <filter id="motionBlur4">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="35 1" />
                     </filter>
                 </svg>
                 <h1>Electrical</h1>
@@ -33,13 +37,13 @@
                     <p>You can keep your site under control remotely, as the unit in able to communicate remotely using GSM data networks, via Long Range Radio, or by sending TXT messages up to 10 mobile numbers.</p>
                     <p>Supervisors are able to set up shift and patrol parameters. The GMU also boasts of an on-board remote control receiver for guard panic and assistance requests.</p>
                 </article>
-                <div class="content-img">
+                <div class="content-img fade-in" data-animate="animate-section">
                     <img src="/img/electrical/fsk-gms.png" alt="GMS">
                 </div>
             </section>
             <section class="content-section cellular-section content-flex">
                 <h2>The TX Cellular Plus</h2>
-                <div class="content-img">
+                <div class="content-img fade-in" data-animate="animate-section">
                     <img src="/img/electrical/fsk-tx-cellular-plus.jpeg" alt="TX Cellular Plus">
                 </div>
                 <article>
@@ -60,13 +64,13 @@
                     <p>When considering a new or an upgrade to your Security Alarm System for your home or your business, our systems are the best. We offer wireless and GSM systems for your complete piece of mind.</p>
                     <p>Our system can include integrated smoke detectors, flame detectors, gas leak sensors, motion sensors, CCTV and video surveillance.</p>
                 </article>
-                <div class="content-img">
+                <div class="content-img fade-in" data-animate="animate-section">
                     <img src="/img/electrical/cctv-camera.png" alt="Wireless GMS">
                 </div>
             </section>
             <section class="content-section turnkey-security-solutions content-flex">
                 <h2>Complete Turnkey Security Solutions</h2>
-                <div class="content-img">
+                <div class="content-img fade-in" data-animate="animate-section">
                     <img src="/img/electrical/dvr-box.jpg" alt="Turnkey">
                 </div>
                 <article>
@@ -74,8 +78,9 @@
                     <p>Our long-term commitment is to provide innovative solutions to the complicated security concerns of our customers and allow them to focus on the positive aspects of prevention.</p>
                 </article>
             </section>
-            <section class="content-section accordion-section">
-                <div class="accordion">
+            <section class="content-section accordion-section fade-in" data-animate="animate-section">
+                <h2>Our Products and Services</h2>
+                <div class="accordion accordion-centered">
                     <article>
                         <h2>Surveillance CCTV</h2>
                         <ul>
@@ -99,9 +104,6 @@
                             <li>Biometric</li>
                         </ul>
                     </article>
-                </div>
-                <div class="content-img">
-                    <img src="/img/electrical/electrical-products.jpg" alt="Products">
                 </div>
             </section>
         </div>

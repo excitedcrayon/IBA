@@ -23,7 +23,8 @@
     user-select: none;
 }
 
-@mixin animation($property){
+// the 3 dots allow for multiple properties separated by commas
+@mixin animation($property...){
     -webkit-animation: $property;
     -moz-animation: $property;
     -ms-animation: $property;

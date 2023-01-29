@@ -11,6 +11,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('scroll', () => {
     updateNavigationBackgroundOpacity();
+    animateOnScroll();
+    animateBackgroundImagePosition();
     try{
         new ParallaxEffect('.page-header-bar');
     }catch(e){}
@@ -142,5 +144,33 @@ function accordion(){
                 }
             });
         });
+    }
+}
+
+function animateOnScroll(){
+    let dataAnimate = document.querySelectorAll('[data-animate]');
+    if(dataAnimate != undefined){
+        dataAnimate.forEach((element) => {
+            let bounds = element.getBoundingClientRect();
+            let elemTop = bounds.top;
+            let elemBottom = bounds.bottom;
+
+            try{
+                let animateClass = element.getAttribute('data-animate');
+    
+                if(elemTop >= 0 && elemBottom <= window.innerHeight){
+                    element.classList.add(animateClass);
+                }
+            }catch(error){}
+
+        });
+    }
+}
+
+function animateBackgroundImagePosition(){
+    let contentHero = document.querySelector('.content-hero');
+    if(contentHero != undefined){
+        let winScroll = window.pageYOffset;
+        contentHero.setAttribute('style',`background-position: 0 -${Math.floor(winScroll * 0.1)}px`);
     }
 }

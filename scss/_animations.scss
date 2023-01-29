@@ -1,0 +1,24 @@
+.fade-in{
+    opacity: 0; 
+    @include animation(fade-in 0.1s linear forwards);
+    @include transition(0.3s ease);
+}
+
+.animate-section{
+    opacity: 1;
+    @include animation (motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s);
+}
+@keyframes motion-blur {
+    0%{
+        @include filter(url(#motionBlur));
+    }
+    25%{
+        @include filter(url(#motionBlur2));
+    }
+    50%{
+        @include filter(url(#motionBlur3));
+    }
+    100%{
+        @include filter(url(#motionBlur4));
+    }
+}
