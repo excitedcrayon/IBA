@@ -171,6 +171,6 @@ function animateBackgroundImagePosition(){
     let contentHero = document.querySelector('.content-hero');
     if(contentHero != undefined){
         let winScroll = window.pageYOffset;
-        contentHero.setAttribute('style',`background-position: 0 -${Math.floor(winScroll * 0.1)}px`);
+        contentHero.setAttribute('style',`background-position-y: -${Math.floor(winScroll * 0.1)}px`);
     }
 }

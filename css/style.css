@@ -748,8 +748,7 @@ h1, h2, h3, h4, h5, h6 {
     background-image: linear-gradient(to bottom, #000000, #002240); }
   .page-wrapper .content-container {
     padding-bottom: 5rem;
-    overflow-x: hidden;
-    /* === ELECTRICAL PAGE === */ }
+    overflow-x: hidden; }
     .page-wrapper .content-container .content-hero {
       width: 100%;
       height: 350px;
@@ -789,10 +788,13 @@ h1, h2, h3, h4, h5, h6 {
       @media (min-width: 767px) {
         .page-wrapper .content-container .content-hero h1 {
           font-size: 4rem; } }
+    .page-wrapper .content-container .solar-hero {
+      background: url("/img/solar/hero-solar.jpg"); }
     .page-wrapper .content-container .electrical-hero {
-      background: url("/img/electrical/electrical.jpg"); }
+      background: url("/img/electrical/hero-electrical.jpg"); }
     .page-wrapper .content-container .content-section {
       margin: 2.35rem auto;
+      padding: 1.25rem;
       max-width: 1300px;
       position: relative;
       z-index: 1; }
@@ -867,6 +869,119 @@ h1, h2, h3, h4, h5, h6 {
         .page-wrapper .content-container .content-flex .content-img img {
           width: 400px;
           height: 400px; } }
+    .page-wrapper .content-container .park-farms-grid {
+      display: -ms-flex;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem;
+      margin: 5rem 1.25rem; }
+      .page-wrapper .content-container .park-farms-grid .park-card {
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        width: 100%;
+        height: 120px;
+        text-align: center;
+        padding: 0.65rem;
+        border: 1px solid #CCCCCC; }
+        .page-wrapper .content-container .park-farms-grid .park-card h3 {
+          text-transform: uppercase;
+          font-weight: 400; }
+        .page-wrapper .content-container .park-farms-grid .park-card p {
+          font-weight: 200;
+          height: 70px; }
+      @media (min-width: 1024px) {
+        .page-wrapper .content-container .park-farms-grid .park-card {
+          max-width: 33.33%; } }
+    .page-wrapper .content-container .carousel {
+      display: -ms-flex;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center; }
+      .page-wrapper .content-container .carousel .carousel-imgs,
+      .page-wrapper .content-container .carousel .carousel-description {
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        width: 100%;
+        height: 300px;
+        position: relative;
+        z-index: 1; }
+      @media (min-width: 650px) {
+        .page-wrapper .content-container .carousel .carousel-imgs,
+        .page-wrapper .content-container .carousel .carousel-description {
+          max-width: 50%; } }
+      .page-wrapper .content-container .carousel .grid-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-size: contain; }
+      .page-wrapper .content-container .carousel .carousel-description > article {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #FFFFFF;
+        display: -ms-flex;
+        display: flex;
+        opacity: 0;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        justify-content: center; }
+      .page-wrapper .content-container .carousel .carousel-btns {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 0 0.5rem;
+        display: -ms-flex;
+        display: flex;
+        justify-content: space-between; }
+        .page-wrapper .content-container .carousel .carousel-btns button {
+          cursor: pointer;
+          outline: none;
+          border: 0;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          background: transparent;
+          position: relative;
+          z-index: 1; }
+          .page-wrapper .content-container .carousel .carousel-btns button:nth-child(1)::before {
+            content: '\003C'; }
+          .page-wrapper .content-container .carousel .carousel-btns button:nth-child(2)::before {
+            content: '\003E'; }
+          .page-wrapper .content-container .carousel .carousel-btns button::before {
+            color: #FFFFFF;
+            font-size: 2rem;
+            font-weight: 300;
+            line-height: 3.3rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            -webkit-transition: 0.4s ease;
+            transition: 0.4s ease; }
+          .page-wrapper .content-container .carousel .carousel-btns button:hover:before {
+            font-size: 1.8rem;
+            background: rgba(0, 0, 0, 0.65); }
+    .page-wrapper .content-container .solar-systems {
+      background: url("/img/solar/grid-tied-solar.jpg") no-repeat center; }
+    .page-wrapper .content-container .battery-systems {
+      background: url("/img/solar/grid-tied-battery.jpg") no-repeat center; }
+    .page-wrapper .content-container .offgrid-systems {
+      background: url("/img/solar/off-grid.jpg") no-repeat center; }
+    .page-wrapper .content-container .direct-systems {
+      background: url("/img/solar/direct-pv.jpg") no-repeat center; }
   .page-wrapper .accordion {
     border: 1px solid #EEEEEE;
     border-radius: 10px;

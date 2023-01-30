@@ -492,14 +492,14 @@
             }
         }
         .solar-hero{
-            //background-image: linear-gradient(to top, rgba($black, 0.75), rgba($dark-color, 0.45)),url('../img/solar/hero-solar.jpg');
+            background: url('/img/solar/hero-solar.jpg');
         }
         .electrical-hero{
-            //background-image: linear-gradient(to top, rgba($black, 0.75), rgba($dark-color, 0.45)),url('../img/electrical/electrical.jpg');
-            background: url('/img/electrical/electrical.jpg');
+            background: url('/img/electrical/hero-electrical.jpg');
         }
         .content-section{
             margin: 2.35rem auto;
+            padding: 1.25rem;
             max-width: 1300px;
             position: relative;
             z-index: 1;
@@ -547,7 +547,6 @@
             .text-center { text-align: center; }
             .text-right { text-align: right; }
         }
-        /* === ELECTRICAL PAGE === */
         .content-flex{
             @include displayFlex;
             > article,
@@ -579,6 +578,130 @@
                     }
                 }
             }
+        }
+        .park-farms-grid{
+            @include displayFlex;
+            font-size: 0.9rem;
+            margin: 5rem 1.25rem;
+            .park-card{
+                @include flex(1 0 auto);
+                height: 120px;
+                text-align: center;
+                padding: 0.65rem;
+                border: 1px solid $darkGrey;
+                h3{
+                    text-transform: uppercase;
+                    font-weight: 400;
+                }
+                p{ 
+                    font-weight: 200;
+                    height: 70px; 
+                }
+            }
+            @media (min-width: 1024px){
+                .park-card{ max-width: 33.33%; }
+            }
+        }
+        .carousel{
+            @include displayFlex;
+            .carousel-imgs,
+            .carousel-description{
+                @include flex(1 0 auto);
+                height: 300px;
+                position: relative;
+                z-index: 1;
+            }
+            @media (min-width: 650px){
+                .carousel-imgs,
+                .carousel-description{
+                    max-width: 50%;
+                }
+            }
+            .grid-img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                background-size: contain;
+            }
+            .carousel-description{
+                > article {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: $white;
+                    display: -ms-flex;
+                    display: flex;
+                    opacity: 0;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+            .carousel-btns{
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: 100%;
+                padding: 0 0.5rem;
+                display: -ms-flex;
+                display: flex;
+                justify-content: space-between;    
+                button{
+                    cursor: pointer;
+                    outline: none;
+                    border: 0;
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                    background: transparent;
+                    position: relative;
+                    z-index: 1;
+                    &:nth-child(1){
+                        &::before{
+                            content: '\003C';
+                        }
+                    }
+                    &:nth-child(2){
+                        &::before{
+                            content: '\003E';
+                        }
+                    }
+                    &::before{
+                        color: $white;
+                        font-size: 2rem;
+                        font-weight: 300;
+                        line-height: 3.3rem;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba($black, 0.75);
+                        @include transition(0.4s ease);
+                    }
+                    &:hover:before{
+                        font-size: 1.8rem;
+                        background: rgba($black, 0.65);
+                    }
+                } 
+            }
+        }
+        .solar-systems{
+            background: url('/img/solar/grid-tied-solar.jpg') no-repeat center;
+        }
+        .battery-systems{
+            background: url('/img/solar/grid-tied-battery.jpg') no-repeat center;
+        }
+        .offgrid-systems{
+            background: url('/img/solar/off-grid.jpg') no-repeat center;
+        }
+        .direct-systems{
+            background: url('/img/solar/direct-pv.jpg') no-repeat center;
         }
     }
     .accordion{

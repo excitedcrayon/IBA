@@ -7,26 +7,33 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/templates.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <title>IBA | Innovation Business Access</title>
+    <title>Solar | Innovation Business Access</title>
 </head>
 <body>
     <div class="page-wrapper">
         <site-header></site-header>
         <div class="content-container">
             <div class="content-hero solar-hero">
+                <svg class="filters">
+                    <filter id="motionBlur">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0 0" />
+                    </filter>
+                    <filter id="motionBlur2">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="5 0" />
+                    </filter>
+                    <filter id="motionBlur3">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="20 0" />
+                    </filter>
+                    <filter id="motionBlur4">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="35 1" />
+                    </filter>
+                </svg>
                 <h1>Solar</h1>
             </div>
             <section class="content-section">
-                <h2>Vision</h2>
-                <article>
-                    <p>We want to see all corners of Africa with adequate and sustainable power to ensure the social and economic advancement of the African people.</p>
-                    <img src="" alt="Izuba Logo Here">
-                </article>
-            </section>
-            <section class="content-section">
-                <h2>Mission Statement</h2>
                 <article>
                     <p>Izuba Solar Solutions exists to promote, develop and deliver turnkey Solar PV projects to ensure the availability of sustainable and renewable energy in Africa.</p>
+                    <p>We want to see all corners of Africa with adequate and sustainable power to ensure the social and economic advancement of the African people.</p>
                 </article>
             </section>
             <section class="content-section carousel">
@@ -67,28 +74,30 @@
                             <li>Often used in remote areas for water pumping</li>
                         </ul>
                     </article>
-                    <div class="carousel-btns">
-                        <button></button><button></button>
-                    </div>
+                </div>
+                <div class="carousel-btns">
+                    <button></button><button></button>
                 </div>
             </section>
             <section class="content-section">
-                <div class="tagline">
-                    <p>Let our experienced solar engineers identify the best solar PV sites within your business or residential premises and then design, build and manage them using world class technology.</p>
-                </div>
-            </section>
-            <section class="content-section parks-farms">
                 <article>
-                    <h2>Solar Parks/Farms</h2>
+                    <p>Let our experienced solar engineers identify the best solar PV sites within your business or residential premises and then design, build and manage them using world class technology.</p>
+                </article>
+            </section>
+            <section class="content-section parks-farms content-flex">
+                <h2>Solar Parks/Farms</h2>
+                <article>
                     <ul>
                         <li>Solar parks can generate a lot of power for businesses and residential areas. They can quickly be implemented to provide power to businesses or other consumers.</li>
                         <li>Izuba can develop and operate solar farms to provide power to utilities or to consumers via Power Purchase Agreements (PPA).</li>
                     </ul>
                 </article>
-                <div class="parks-farms-img">
-                    <img src="" alt="Parks Farms">
+                <div class="content-img">
+                    <img src="/img/solar/solar-farm.jpg" class="fade-in" alt="Parks Farms" data-animate="animate-section">
                 </div>
-                <div class="parks-farms-grid">
+            </section>
+            <section class="content-section">
+                <div class="park-farms-grid">
                     <div class="park-card">
                         <h3>Feasibility & Conceptual Study</h3>
                         <p>Technical Assessment & Economic Evaluation</p>
@@ -104,14 +113,14 @@
                 </div>
             </section>
             <section class="content-section traffic-signals">
+                <h2>Solar Powered Traffic Signals</h2>
                 <article>
-                    <h2>Solar Powered Traffic Signals</h2>
                     <ul>
                         <li>We work with <strong>International Solar Signal Inc</strong> to provide the world's most advanced solar powered traffic signals</li>
                         <li>International Solar Signal traffic lights are designed with the following in mind: <strong>theft, resistance; signal reliability; energy efficiency; easy installation</strong></li>
                     </ul>
                 </article>
-                <div class="traffic-signals-img">
+                <div class="content-img">
                     <img src="" alt="Traffic Signals">
                 </div>
             </section>
@@ -133,7 +142,7 @@
                     <p>We also offer a full operation and maintenance program</p>
                 </div>
             </section>
-            <div class="content-section solar-location">
+            <!-- <div class="content-section solar-location">
                 <div class="solar-location-left">
                     <h2>Izuba Solar Solutions</h2>
                     <article>
@@ -160,7 +169,7 @@
                         <p>Email: <a href="mailto:rugeroc@gmail.com?Subject=Izuba Solar Solution Enquiry" target="_blank">rugeroc@gmail.com</a></p>
                     </article>
                 </div>
-            </div>
+            </div> -->
             <div class="download-btn">
                 <a href="" title="Download Presentation" download>Download Presentation</a>
             </div>
