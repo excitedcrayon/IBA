@@ -22,3 +22,9 @@
         @include filter(url(#motionBlur4));
     }
 }
+
+.animate-carousel{
+    opacity: 1 !important;
+    z-index: 1;
+    @include animation (motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s);
+}

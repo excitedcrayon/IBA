@@ -565,11 +565,16 @@
             }
             .content-img{
                 img {
-                    width: 350px;
+                    width: 100%;
                     height: 350px;
                     margin: 0 auto;
                     object-fit: contain;
                     object-position: center;
+                }
+                @media (min-width: 768px){
+                    img {
+                        width: 350px;
+                    }
                 }
                 @media (min-width: 1024px){
                     img{
@@ -602,6 +607,29 @@
                 .park-card{ max-width: 33.33%; }
             }
         }
+        .our-services-cards{
+            @include displayFlex;
+            .our-service-card{
+                @include flex(1 0 auto);
+                height: 200px;
+                padding: 1.25rem;
+                border: 1px solid $darkGrey;
+                h3{
+                    text-transform: uppercase;
+                    font-weight: 400;
+                }
+                p{
+                    font-weight: 200;
+                    height: 70px;
+                }
+            }
+            @media (min-width: 768px){
+                .our-service-card{
+                    max-width: 50%;
+                }
+            }
+            
+        }
         .carousel{
             @include displayFlex;
             .carousel-imgs,
@@ -614,7 +642,7 @@
             @media (min-width: 650px){
                 .carousel-imgs,
                 .carousel-description{
-                    max-width: 50%;
+                    max-width: 40%;
                 }
             }
             .grid-img{
@@ -637,9 +665,25 @@
                     display: -ms-flex;
                     display: flex;
                     opacity: 0;
+                    padding: 2rem;
                     -ms-flex-direction: column;
                     flex-direction: column;
                     justify-content: center;
+                    h2{
+                        color: $dark-color;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        margin-bottom: 0.35rem;
+                    }
+                    @media (max-width: 650px){
+                        h2{
+                            margin-top: 6rem;
+                        }
+                    }
+                    li{
+                        font-size: 1.25rem;
+                        font-weight: 200;
+                    }
                 }
             }
             .carousel-btns{

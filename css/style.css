@@ -101,6 +101,15 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-filter: url(#motionBlur4);
     filter: url(#motionBlur4); } }
 
+.animate-carousel {
+  opacity: 1 !important;
+  z-index: 1;
+  -webkit-animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s;
+  -moz-animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s;
+  -ms-animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s;
+  -o-animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s;
+  animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s; }
+
 .page-wrapper .nav-container {
   position: fixed;
   width: 100%;
@@ -860,11 +869,14 @@ h1, h2, h3, h4, h5, h6 {
         .page-wrapper .content-container .content-flex .content-img {
           max-width: 50%; } }
       .page-wrapper .content-container .content-flex .content-img img {
-        width: 350px;
+        width: 100%;
         height: 350px;
         margin: 0 auto;
         object-fit: contain;
         object-position: center; }
+      @media (min-width: 768px) {
+        .page-wrapper .content-container .content-flex .content-img img {
+          width: 350px; } }
       @media (min-width: 1024px) {
         .page-wrapper .content-container .content-flex .content-img img {
           width: 400px;
@@ -895,6 +907,29 @@ h1, h2, h3, h4, h5, h6 {
       @media (min-width: 1024px) {
         .page-wrapper .content-container .park-farms-grid .park-card {
           max-width: 33.33%; } }
+    .page-wrapper .content-container .our-services-cards {
+      display: -ms-flex;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center; }
+      .page-wrapper .content-container .our-services-cards .our-service-card {
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        width: 100%;
+        height: 200px;
+        padding: 1.25rem;
+        border: 1px solid #CCCCCC; }
+        .page-wrapper .content-container .our-services-cards .our-service-card h3 {
+          text-transform: uppercase;
+          font-weight: 400; }
+        .page-wrapper .content-container .our-services-cards .our-service-card p {
+          font-weight: 200;
+          height: 70px; }
+      @media (min-width: 768px) {
+        .page-wrapper .content-container .our-services-cards .our-service-card {
+          max-width: 50%; } }
     .page-wrapper .content-container .carousel {
       display: -ms-flex;
       display: flex;
@@ -913,7 +948,7 @@ h1, h2, h3, h4, h5, h6 {
       @media (min-width: 650px) {
         .page-wrapper .content-container .carousel .carousel-imgs,
         .page-wrapper .content-container .carousel .carousel-description {
-          max-width: 50%; } }
+          max-width: 40%; } }
       .page-wrapper .content-container .carousel .grid-img {
         position: absolute;
         top: 0;
@@ -932,9 +967,21 @@ h1, h2, h3, h4, h5, h6 {
         display: -ms-flex;
         display: flex;
         opacity: 0;
+        padding: 2rem;
         -ms-flex-direction: column;
         flex-direction: column;
         justify-content: center; }
+        .page-wrapper .content-container .carousel .carousel-description > article h2 {
+          color: #002240;
+          text-transform: uppercase;
+          font-weight: 400;
+          margin-bottom: 0.35rem; }
+        @media (max-width: 650px) {
+          .page-wrapper .content-container .carousel .carousel-description > article h2 {
+            margin-top: 6rem; } }
+        .page-wrapper .content-container .carousel .carousel-description > article li {
+          font-size: 1.25rem;
+          font-weight: 200; }
       .page-wrapper .content-container .carousel .carousel-btns {
         position: absolute;
         left: 0;

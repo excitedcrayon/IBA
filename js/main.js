@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     animateSolarImages();
     animateOurServicesBgColor();
     accordion();
+    carousel();
 });
 
 window.addEventListener('scroll', () => {
@@ -171,6 +172,49 @@ function animateBackgroundImagePosition(){
     let contentHero = document.querySelector('.content-hero');
     if(contentHero != undefined){
         let winScroll = window.pageYOffset;
-        contentHero.setAttribute('style',`background-position-y: -${Math.floor(winScroll * 0.1)}px`);
+        contentHero.setAttribute('style',`background-position-y: -${Math.floor(winScroll * 0.05)}px`);
     }
+}
+
+let carouselIndex = 0;
+function carousel(){
+    let gridImage = document.querySelectorAll('.grid-img');
+    let carouselDescriptionArticle = document.querySelectorAll('.carousel-description > article');
+    let carouselBtns = document.querySelectorAll('.carousel-btns > button');
+    let animateCarousel = 'animate-carousel';
+    try{
+
+        gridImage[0].classList.add(animateCarousel);
+        carouselDescriptionArticle[0].classList.add(animateCarousel);
+
+        carouselBtns.forEach((button) => {
+            button.addEventListener('click', () => {
+
+                if(button.classList.contains('carousel-left-btn')){
+                    clearCarouselSelectors(gridImage, animateCarousel);
+                    clearCarouselSelectors(carouselDescriptionArticle, animateCarousel);
+                    gridImage[carouselIndex].classList.add(animateCarousel);
+                    carouselDescriptionArticle[carouselIndex].classList.add(animateCarousel);
+                    carouselIndex--;
+                }else{
+                    clearCarouselSelectors(gridImage, animateCarousel);
+                    clearCarouselSelectors(carouselDescriptionArticle, animateCarousel);
+                    gridImage[carouselIndex].classList.add(animateCarousel);
+                    carouselDescriptionArticle[carouselIndex].classList.add(animateCarousel);
+                    carouselIndex++;
+                }
+
+                if(carouselIndex < 0){
+                    carouselIndex = gridImage.length - 1;
+                } else if (carouselIndex > gridImage.length - 1){
+                    carouselIndex = 0;
+                }
+            })
+        });
+    }catch(error){}
+}
+function clearCarouselSelectors(nodeList, selector){
+    nodeList.forEach((element) => {
+        element.classList.remove(selector);
+    });
 }
