@@ -73,12 +73,14 @@ function scrollToFirstSection(){
     if(pageHeroButton != undefined){
         let sectionWrapper = document.querySelector('.solar-electrical-wrapper');
         pageHeroButton.addEventListener('click', () => {
-            let sectionWrapperBounds = sectionWrapper.getBoundingClientRect();
-            window.scrollTo({
-                top: Math.floor(sectionWrapperBounds.top) - 80,
-                left: 0,
-                behavior: 'smooth'
-            });
+            setTimeout(() => {
+                let sectionWrapperBounds = sectionWrapper.getBoundingClientRect();
+                window.scrollTo({
+                    top: Math.floor(sectionWrapperBounds.top) - 80,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            },400);
         });
     }
 }
@@ -172,7 +174,7 @@ function animateBackgroundImagePosition(){
     let contentHero = document.querySelector('.content-hero');
     if(contentHero != undefined){
         let winScroll = window.pageYOffset;
-        contentHero.setAttribute('style',`background-position-y: -${Math.floor(winScroll * 0.05)}px`);
+        contentHero.setAttribute('style',`background-position-y: -${Math.floor(winScroll * 0.15)}px`);
     }
 }
 
@@ -190,24 +192,24 @@ function carousel(){
         carouselBtns.forEach((button) => {
             button.addEventListener('click', () => {
 
+                if(carouselIndex <= 0){
+                    carouselIndex = gridImage.length - 1;
+                } else if (carouselIndex > gridImage.length - 1){
+                    carouselIndex = 0;
+                }
+
                 if(button.classList.contains('carousel-left-btn')){
                     clearCarouselSelectors(gridImage, animateCarousel);
                     clearCarouselSelectors(carouselDescriptionArticle, animateCarousel);
                     gridImage[carouselIndex].classList.add(animateCarousel);
                     carouselDescriptionArticle[carouselIndex].classList.add(animateCarousel);
                     carouselIndex--;
-                }else{
+                }else if(button.classList.contains('carousel-right-btn')){
                     clearCarouselSelectors(gridImage, animateCarousel);
                     clearCarouselSelectors(carouselDescriptionArticle, animateCarousel);
                     gridImage[carouselIndex].classList.add(animateCarousel);
                     carouselDescriptionArticle[carouselIndex].classList.add(animateCarousel);
                     carouselIndex++;
-                }
-
-                if(carouselIndex < 0){
-                    carouselIndex = gridImage.length - 1;
-                } else if (carouselIndex > gridImage.length - 1){
-                    carouselIndex = 0;
                 }
             })
         });
