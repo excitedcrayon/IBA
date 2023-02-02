@@ -517,8 +517,7 @@
             background: url('/img/electrical/hero-electrical.jpg');
         }
         .about-hero{
-            @include background-image(linear-gradient(transparent, $primary-color), url('/img/african-map.png'));
-            //background: linear-gradient($secondary-color, $primary-color);
+            @include background-image(linear-gradient(transparent, $primary-color), url('/img/african-map.jpg'));
         }
         .content-section{
             margin: 2.35rem auto;

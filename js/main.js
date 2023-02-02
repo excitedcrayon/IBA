@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', () => {
     updateNavigationBackgroundOpacity();
     animateOnScroll();
-    animateBackgroundImagePosition();
+    //animateBackgroundImagePosition();
     try{
         new ParallaxEffect('.page-header-bar');
     }catch(e){}

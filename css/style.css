@@ -828,7 +828,7 @@ h1, h2, h3, h4, h5, h6 {
     .page-wrapper .content-container .electrical-hero {
       background: url("/img/electrical/hero-electrical.jpg"); }
     .page-wrapper .content-container .about-hero {
-      background-image: linear-gradient(transparent, #047AED), url("/img/african-map.png");
+      background-image: linear-gradient(transparent, #047AED), url("/img/african-map.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center; }
